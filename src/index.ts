@@ -67,6 +67,8 @@ export class NostrSocket extends EventEmitter {
       this.cipher = getSecret(cipher)
     }
 
+    console.log(this.filter)
+
     this._sub = this.sub(this.filter) 
   }
 
