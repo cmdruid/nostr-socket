@@ -61,15 +61,8 @@ export class NostrSocket extends EventEmitter {
       since : util.now()
     }
 
-    const { cipher } = config ?? {}
-
-    if (cipher !== undefined) {
-      this.cipher = getSecret(cipher)
-    }
-
-    console.log(this.filter)
-
-    this._sub = this.sub(this.filter) 
+    this.cipher = config?.cipher
+    this._sub   = this.sub(this.filter) 
   }
 
   set cipher (secret : string | undefined) {
@@ -99,7 +92,7 @@ export class NostrSocket extends EventEmitter {
     }
   }
 
-  _echoHandler (event : Event) : boolean {
+  _isEcho (event : Event) : boolean {
     return (
       !this.opt.echo &&
       event.pubkey === this.pubkey
@@ -109,7 +102,7 @@ export class NostrSocket extends EventEmitter {
   async _eventHandler (event : Event) {
     try {
       util.verifyEvent(event)
-      if (this._echoHandler(event)) return
+      if (this._isEcho(event)) return
       const decrypted = await decryptEvent(event, this._cipher)
       const [ label, payload ] = util.parseEvent(decrypted)
       this.emit(label, payload, event)
