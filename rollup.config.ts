@@ -35,16 +35,16 @@ const tsConfig = {
 }
 
 const nodeConfig = {
-  input: './src/index.ts',
+  input: 'src/index.ts',
   onwarn,
   output: [
     {
-      file: './dist/main.cjs',
+      file: 'dist/main.cjs',
       format: 'cjs',
       sourcemap: true
     },
     {
-      file: './dist/module.mjs',
+      file: 'dist/module.mjs',
       format: 'es',
       sourcemap: true,
       minifyInternalExports: false
@@ -57,11 +57,11 @@ const nodeConfig = {
 }
 
 const browserConfig = {
-  input: './src/index.ts',
+  input: 'src/index.ts',
   onwarn,
   output: [
     {
-      file: './dist/bundle.min.js',
+      file: 'dist/bundle.min.js',
       format: 'iife',
       name: libraryName,
       plugins: [terser()],
