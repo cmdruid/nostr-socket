@@ -1,24 +1,24 @@
 {
-  "name": "nostr-socket",
-  "author": "Christopher Scott",
-  "license": "MIT",
-  "version": "1.0.0",
-  "description": "Create a virtual network socket that runs over nostr.",
-  "type": "module",
-  "main": "./dist/main.cjs",
-  "unpkg": "./dist/bundle.min.js",
-  "types": "./dist/types/index.d.ts",
+  "name"        : "nostr-socket",
+  "author"      : "Christopher Scott",
+  "license"     : "MIT",
+  "version"     : "1.0.0",
+  "description" : "Create a virtual network socket that runs over nostr.",
+  "type"        : "module",
+  "main"        : "./dist/main.cjs",
+  "unpkg"       : "./dist/bundle.min.js",
+  "types"       : "./dist/types/index.d.ts",
   "exports": {
-    "import": "./dist/module.mjs",
-    "require": "./dist/main.cjs"
+    "import"  : "./dist/module.mjs",
+    "require" : "./dist/main.cjs"
   },
   "repository": {
-    "type": "git",
-    "url": "https://github.com/cmdruid/nostr-socket"
+    "type" : "git",
+    "url"  : "https://github.com/cmdruid/nostr-socket"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org",
-    "access": "public"
+    "registry" : "https://registry.npmjs.org",
+    "access"   : "public"
   },
   "files": [
     "README.md",
@@ -48,10 +48,10 @@
     "typescript": "^5.1.6"
   },
   "scripts": {
-    "build": "rollup -c rollup.config.ts --configPlugin typescript",
-    "clean": "rm -rf dist/*",
-    "scratch": "node --loader ts-node/esm --no-warnings test/scratch.ts",
-    "types": "tsc",
-    "release": "yarn clean && yarn types && yarn build"
+    "build"   : "rollup -c rollup.config.ts --configPlugin typescript",
+    "clean"   : "rm -rf dist/*",
+    "scratch" : "node --loader ts-node/esm --no-warnings test/scratch.ts",
+    "types"   : "tsc",
+    "release" : "yarn clean && yarn types && yarn build"
   }
 }
