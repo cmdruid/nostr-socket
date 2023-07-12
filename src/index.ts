@@ -36,8 +36,8 @@ export class NostrSocket extends EventEmitter {
   readonly _pubkey : string
   readonly _signer : Signer
   readonly filter  : Filter
-  readonly relays : string[]
-  readonly opt    : SocketOptions
+  readonly relays  : string[]
+  readonly opt     : SocketOptions
 
   _cipher ?: string
   _sub     : Sub
