@@ -2,7 +2,7 @@
   "name"        : "@cmdcode/nostr-socket",
   "author"      : "Christopher Scott",
   "license"     : "MIT",
-  "version"     : "1.0.1",
+  "version"     : "1.0.2",
   "description" : "Create a virtual network socket that runs over nostr.",
   "type"        : "module",
   "main"        : "./dist/main.cjs",
