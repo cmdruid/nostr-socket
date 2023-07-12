@@ -64,7 +64,7 @@ export class NostrSocket extends EventEmitter {
     const { cipher } = config ?? {}
 
     if (cipher !== undefined) {
-      this._cipher = getSecret(cipher)
+      this.cipher = getSecret(cipher)
     }
 
     this._sub = this.sub(this.filter) 
